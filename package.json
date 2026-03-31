@@ -1,0 +1,35 @@
+{
+  "name": "delivery-dispatch-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Delivery order dispatch simulation with queues, locking, and idempotent payments",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "dev:api": "tsx watch src/index.ts",
+    "dev:worker": "tsx watch src/worker.ts",
+    "start:api": "node dist/index.js",
+    "start:worker": "node dist/worker.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bullmq": "^5.34.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "ioredis": "^5.4.2",
+    "pg": "^8.13.1",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
